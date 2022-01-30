@@ -1,0 +1,5 @@
+node_modules
+.vscode
+*.js
+data.db
+secret.yaml

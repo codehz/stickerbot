@@ -1,0 +1,122 @@
+font: 28px sans-serif
+styles:
+  steam:
+    tiny:
+      preview: CAACAgUAAxkDAAPsYfaOK4D3K2WGVbwelO6DkW8u3UoAAvoDAALfobFXbKdTSJEL_uEjBA
+      inputs: 1
+      components:
+        background:
+          type: fill
+          color: "#4c6b22"
+        content:
+          type: reftext
+          ref: 0
+          color: "#a4d007"
+      layout: |
+        H:|-16-[content]-16-|
+        V:|-[content]-|
+        HV:|[background]|
+    tiny-2:
+      preview: CAACAgUAAxkDAAP2YfaOgqRQVy0wl3AN6-a_sTp09_oAAvsDAALfobFXtiGqpkFOakIjBA
+      inputs: 1
+      components:
+        background:
+          type: fill
+          color: "rgba(0,0,0,0.6)"
+        content:
+          type: reftext
+          ref: 0
+          color: "white"
+      layout: |
+        H:|-16-[content]-16-|
+        V:|-[content]-|
+        HV:|[background]|
+    small:
+      preview: CAACAgUAAxkDAAIBAmH2jqZcIxxmSljx3RzYIYgFBS2SAAL8AwAC36GxV4oyshPLtJf5IwQ
+      inputs: 2
+      components:
+        left_background:
+          type: fill
+          color: "#4c6b22"
+        right_background:
+          type: fill
+          color: "rgba(0,0,0,0.6)"
+        left_text:
+          type: reftext
+          ref: 0
+          color: "#a4d007"
+        right_text:
+          type: reftext
+          ref: 1
+          color: "white"
+      layout: |
+        V:|[left_background,right_background]|
+        H:|[left_background][right_background]|
+        V:|-[left_text,right_text]-|
+        H:|-16-[left_text]-[right_background]->[left_background]-[right_text]-16-|
+    small-2:
+      preview: CAACAgUAAxkDAAIBHmH2j0mVMWqvpufLd0EdGCe7BqfNAAL-AwAC36GxVyTpyeKpGocrIwQ
+      inputs: 3
+      components:
+        left_background:
+          type: fill
+          color: "#4c6b22"
+        right_background:
+          type: fill
+          color: "rgba(0,0,0,0.6)"
+        left_text:
+          type: reftext
+          ref: 0
+          color: "#a4d007"
+        middle_text:
+          type: reftext
+          ref: 1
+          linethrough: 1
+          color: "#848e94"
+        right_text:
+          type: reftext
+          ref: 2
+          color: "white"
+      layout: |
+        V:|[left_background,right_background]|
+        H:|[left_background][right_background]|
+        V:|-[left_text,middle_text,right_text]-|
+        H:|-16-[left_text]-[right_background]->[left_background]-[middle_text]-[right_text]-16-|
+    big:
+      preview: CAACAgUAAxkDAAIBLGH2j59Ky20aaEEvLHW9cXIbxUuDAAL_AwAC36GxVwwCrwOsBHJKIwQ
+      inputs: 3
+      components:
+        background:
+          type: fill
+          color: "black"
+        left_button:
+          type: fill
+          color: "#4c6b22"
+        left_text:
+          type: reftext
+          ref: 0
+          color: "#a4d007"
+          font: 50px sans-serif
+        top_text:
+          type: reftext
+          ref: 1
+          font: 24px sans-serif
+          linethrough: 2
+          color: "#626366"
+        right_text:
+          type: reftext
+          ref: 2
+          font: 28px sans-serif
+          color: "#acdbf5"
+      layout: |
+        HV:|[background]|
+        H:|-4-[left_button(left_text+32)]-16-[right]-16-|
+        H:|-20-[left_text]
+        V:|-4-[left_button(>=left_text+32)]-4-|
+        V:|~[left_text]~|
+        H:[top_text,right_text]-16-|
+        V:|~[top_text]-[right_text]~|
+        H:[right(>=top_text,>=right_text)]
+        V:|-[right:[top_text_x]-[right_text_x]]-|
+        V:[top_text_x(>=top_text)]
+        V:[right_text_x(>=right_text)]
